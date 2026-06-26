@@ -120,9 +120,14 @@ function App() {
             {data ? (
               <>
                 <div style={{ fontSize: 64, fontWeight: 700 }}>
-                  {data.pct}%
+                  {data.pct?.toFixed(1)}%
                 </div>
-                <div>Raw value: {data.raw}</div>
+
+                <div style={{ fontSize: 18, margin: '8px 0' }}>
+                  🌡️ {data.temp ?? '—'}°C &nbsp;&nbsp;
+                  💧 {data.humidity ?? '—'}% humidity
+                </div>
+
                 <div>
                   Pump:{' '}
                   <span style={{ color: data.pump ? '#2563eb' : '#666' }}>
